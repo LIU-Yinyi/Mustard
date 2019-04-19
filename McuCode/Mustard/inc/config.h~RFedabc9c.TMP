@@ -1,0 +1,141 @@
+#ifndef __MUSTARD_CONFIG
+#define __MUSTARD_CONFIG
+
+#include <stm32f10x.h>
+
+/*多轴飞行器*/
+#define Flight_Axis 4
+
+/************启用设置*************/
+
+/*是否使用外设*/
+#define CONFIG_USE_LED
+#define CONFIG_USE_ADC
+#define CONFIG_USE_DEBUG
+#define CONFIG_USE_RAS
+#define CONFIG_USE_DEFAULT
+
+/*外设驱动模式*/
+#define CONFIG_IMU_MODE
+#define CONFIG_NRF_MODE
+
+/************外设接口*************/
+
+/*系统任务中断定时器接口*/
+#define SYS_RCC_APB1
+#define SYS_RCC_APB2
+#define SYS_TIMx
+#define SYS_CLOCK						72000000
+
+/*PWM接口*/
+#define PWM_RCC_APB1				RCC_APB1Periph_TIM3
+#define PWM_RCC_APB2				RCC_APB2Periph_GPIOC | RCC_APB2Periph_AFIO
+#define PWM_Pin_isRemap			true
+#define PWM_TIMx_Remap			GPIO_FullRemap_TIM3
+#define PWM_GPIOx						GPIOC
+#define PWM_TIMx						TIM3
+#define PWM_FL_Pin					GPIO_Pin_6
+#define PWM_FR_Pin					GPIO_Pin_7
+#define PWM_BL_Pin					GPIO_Pin_8
+#define PWM_BR_Pin					GPIO_Pin_9
+
+/*LED接口*/
+#define LED_RCC_APB1					
+#define LED_RCC_APB2				RCC_APB2Periph_GPIOE
+#define LED_GPIOx						GPIOE
+#define LED_D0_Pin					GPIO_Pin_3
+#define LED_D1_Pin					GPIO_Pin_4
+#define LED_D2_Pin					GPIO_Pin_5
+
+/*Debug的USART接口*/
+#define DEBUG_RCC_APB1			
+#define DEBUG_RCC_APB2
+#define DEBUG_USARTx
+#define DEBUG_GPIOx
+#define DEBUG_TX_Pin
+#define DEBUG_RX_Pin
+#define DEBUG_NVIC_PROMP
+#define DEBUG_NVIC_SUB
+
+/*IMU的USART接口*/
+#define IMU_RCC_APB1
+#define IMU_RCC_APB2
+#define IMU_USARTx
+#define IMU_GPIOx
+#define IMU_TX_Pin
+#define IMU_RX_Pin
+#define IMU_NVIC_PROMP
+#define IMU_NVIC_SUB
+
+/*GPS的USART接口*/
+#define GPS_RCC_APB1
+#define GPS_RCC_APB2
+#define GPS_USARTx
+#define GPS_GPIOx
+#define GPS_TX_Pin
+#define GPS_RX_Pin
+#define GPS_NVIC_PROMP
+#define GPS_NVIC_SUB
+
+/*Raspi的USART接口（图像处理与协调）*/
+#define RAS_RCC_APB1
+#define RAS_RCC_APB2
+#define RAS_USARTx
+#define RAS_GPIOx
+#define RAS_TX_Pin
+#define RAS_RX_Pin
+#define RAS_NVIC_PROMP
+#define RAS_NVIC_SUB
+
+/*IMU的IIC接口*/
+
+/*ADC接口*/
+
+/*MS5611的IIC接口*/
+#define MS5611_RCC_APB1
+#define MS5611_RCC_APB2
+#define MS5611_IICx
+#define MS5611_GPIOx
+#define MS5611_SCL_Pin
+#define MS5611_SDA_Pin
+
+/*OLED的IIC接口（软件模拟IIC）*/
+#define OLED_RCC_APB1
+#define OLED_RCC_APB2
+#define OLED_GPIOx
+#define OLED_SCL_Pin
+#define OLED_SDA_Pin
+
+/*NRF的SPI接口*/
+#define NRF_RCC_APB1
+#define NRF_RCC_APB2
+#define NRF_SPIx
+#define NRF_GPIOx
+#define NRF_CSN_Pin
+#define NRF_SCK_Pin
+#define NRF_MISO_Pin
+#define NRF_MOSI_Pin
+#define NRF_AUX_GPIOx
+#define NRF_CE_Pin
+#define NRF_IRQ_Pin
+
+/*FLASH的SPI接口*/
+#define FLASH_RCC_APB1
+#define FLASH_RCC_APB2
+#define FLASH_SPIx
+#define FLASH_GPIOx
+#define FLASH_CSN_Pin
+#define FLASH_SCK_Pin
+#define FLASH_MISO_Pin
+#define FLASH_MOSI_Pin
+#define FLASH_AUX_GPIOx
+#define FLASH_WP_Pin
+#define FLASH_HOLD_Pin
+
+/*缺省接口*/
+#define DEFAULT_RCC_APB1
+#define DEFAULT_RCC_APB2
+#define DEFAULT_GPIOx
+#define DEFAULT_Pin
+
+#endif
